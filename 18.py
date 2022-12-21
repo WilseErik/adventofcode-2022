@@ -41,17 +41,13 @@ def flood_with_water(box):
 with open('18i.txt', 'r') as f:
     lines = [l.strip() for l in f.readlines()]
 blocks = [list(map(int, l.split(','))) for l in lines]
-
 BOX_SIZE = 25
-BOX_CENTER = 12
 box = np.zeros((BOX_SIZE,BOX_SIZE, BOX_SIZE), dtype=np.uint8)
-
 for b in blocks:
     x = b[0]+1
     y = b[1]+1
     z = b[2]+1
     box[x,y,z] = 1
-
 surface = 0
 for x in range(BOX_SIZE):
     for y in range(BOX_SIZE):
